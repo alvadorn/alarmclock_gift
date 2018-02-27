@@ -1,11 +1,17 @@
 CC=xc8
-ARGS=--chip=18F14K50 --asmlist --outdir=../bin/
+ARGS=--chip=18F14K50 --asmlist --outdir=../bin/ --mode=pro -P --opt=+space,+speed
+FILES=main.c settings.c spi.c
 
 all:
-	$(CC) main.c $(ARGS) -Oalarmclock.hex
+	$(CC) $(FILES) $(ARGS)
+
+main.p1: 
+	$(CC) main.c $(ARGS)
+settings.p1:
+	$(CC) settings.c $(ARGS)
 
 screen.o:
 	$(CC) screen.c -C $(ARGS)
 
 clean:
-	rm -rf *.as *.cof *.hex *.hxl *.sdb *.sym *.pre *.lst *.d *.p1 *.obj *.rlf *.cmf
+	rm -rf ../bin/*
