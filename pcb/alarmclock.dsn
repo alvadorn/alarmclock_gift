@@ -1,0 +1,199 @@
+(pcb /home/igor/workspace/alarmclock/pcb/alarmclock.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "4.0.7")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (rect pcb 98875 -65395 137311 -100735)
+    )
+    (via "Via[0-1]_1000:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component Resistors_THT:R_Axial_DIN0922_L20.0mm_D9.0mm_P25.40mm_Horizontal
+      (place 10k1 105410 -99060 front 90 (PN R))
+    )
+    (component "Housings_SSOP:SSOP-20_5.3x7.2mm_Pitch0.65mm"
+      (place MCU1 129540 -71120 back 0 (PN "PIC18F14K50-E/SS"))
+    )
+  )
+  (library
+    (image Resistors_THT:R_Axial_DIN0922_L20.0mm_D9.0mm_P25.40mm_Horizontal
+      (outline (path signal 100  2700 4500  2700 -4500))
+      (outline (path signal 100  2700 -4500  22700 -4500))
+      (outline (path signal 100  22700 -4500  22700 4500))
+      (outline (path signal 100  22700 4500  2700 4500))
+      (outline (path signal 100  0 0  2700 0))
+      (outline (path signal 100  25400 0  22700 0))
+      (outline (path signal 120  2640 4560  2640 -4560))
+      (outline (path signal 120  2640 -4560  22760 -4560))
+      (outline (path signal 120  22760 -4560  22760 4560))
+      (outline (path signal 120  22760 4560  2640 4560))
+      (outline (path signal 120  1380 0  2640 0))
+      (outline (path signal 120  24020 0  22760 0))
+      (outline (path signal 50  -1450 4850  -1450 -4850))
+      (outline (path signal 50  -1450 -4850  26850 -4850))
+      (outline (path signal 50  26850 -4850  26850 4850))
+      (outline (path signal 50  26850 4850  -1450 4850))
+      (pin Round[A]Pad_2400_um 1 0 0)
+      (pin Oval[A]Pad_2400x2400_um 2 25400 0)
+    )
+    (image "Housings_SSOP:SSOP-20_5.3x7.2mm_Pitch0.65mm"
+      (outline (path signal 150  -1650 3600  2650 3600))
+      (outline (path signal 150  2650 3600  2650 -3600))
+      (outline (path signal 150  2650 -3600  -2650 -3600))
+      (outline (path signal 150  -2650 -3600  -2650 2600))
+      (outline (path signal 150  -2650 2600  -1650 3600))
+      (outline (path signal 50  -4750 4000  -4750 -4000))
+      (outline (path signal 50  4750 4000  4750 -4000))
+      (outline (path signal 50  -4750 4000  4750 4000))
+      (outline (path signal 50  -4750 -4000  4750 -4000))
+      (outline (path signal 150  -2875 3825  -2875 3475))
+      (outline (path signal 150  2875 3825  2875 3375))
+      (outline (path signal 150  2875 -3825  2875 -3375))
+      (outline (path signal 150  -2875 -3825  -2875 -3375))
+      (outline (path signal 150  -2875 3825  2875 3825))
+      (outline (path signal 150  -2875 -3825  2875 -3825))
+      (outline (path signal 150  -2875 3475  -4475 3475))
+      (pin Rect[T]Pad_1750x450_um 1 -3600 2925)
+      (pin Rect[T]Pad_1750x450_um 2 -3600 2275)
+      (pin Rect[T]Pad_1750x450_um 3 -3600 1625)
+      (pin Rect[T]Pad_1750x450_um 4 -3600 975)
+      (pin Rect[T]Pad_1750x450_um 5 -3600 325)
+      (pin Rect[T]Pad_1750x450_um 6 -3600 -325)
+      (pin Rect[T]Pad_1750x450_um 7 -3600 -975)
+      (pin Rect[T]Pad_1750x450_um 8 -3600 -1625)
+      (pin Rect[T]Pad_1750x450_um 9 -3600 -2275)
+      (pin Rect[T]Pad_1750x450_um 10 -3600 -2925)
+      (pin Rect[T]Pad_1750x450_um 11 3600 -2925)
+      (pin Rect[T]Pad_1750x450_um 12 3600 -2275)
+      (pin Rect[T]Pad_1750x450_um 13 3600 -1625)
+      (pin Rect[T]Pad_1750x450_um 14 3600 -975)
+      (pin Rect[T]Pad_1750x450_um 15 3600 -325)
+      (pin Rect[T]Pad_1750x450_um 16 3600 325)
+      (pin Rect[T]Pad_1750x450_um 17 3600 975)
+      (pin Rect[T]Pad_1750x450_um 18 3600 1625)
+      (pin Rect[T]Pad_1750x450_um 19 3600 2275)
+      (pin Rect[T]Pad_1750x450_um 20 3600 2925)
+    )
+    (padstack Round[A]Pad_2400_um
+      (shape (circle F.Cu 2400))
+      (shape (circle B.Cu 2400))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_2400x2400_um
+      (shape (path F.Cu 2400  0 0  0 0))
+      (shape (path B.Cu 2400  0 0  0 0))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1750x450_um
+      (shape (rect F.Cu -875 -225 875 225))
+      (attach off)
+    )
+    (padstack "Via[0-1]_1000:400_um"
+      (shape (circle F.Cu 1000))
+      (shape (circle B.Cu 1000))
+      (attach off)
+    )
+  )
+  (network
+    (net "Net-(10k1-Pad1)"
+      (pins 10k1-1 MCU1-4)
+    )
+    (net +5V
+      (pins 10k1-2 MCU1-1)
+    )
+    (net "Net-(MCU1-Pad2)"
+      (pins MCU1-2)
+    )
+    (net "Net-(MCU1-Pad3)"
+      (pins MCU1-3)
+    )
+    (net "Net-(MCU1-Pad5)"
+      (pins MCU1-5)
+    )
+    (net "Net-(MCU1-Pad6)"
+      (pins MCU1-6)
+    )
+    (net "Net-(MCU1-Pad7)"
+      (pins MCU1-7)
+    )
+    (net "Net-(MCU1-Pad8)"
+      (pins MCU1-8)
+    )
+    (net "Net-(MCU1-Pad9)"
+      (pins MCU1-9)
+    )
+    (net "Net-(MCU1-Pad10)"
+      (pins MCU1-10)
+    )
+    (net "Net-(MCU1-Pad11)"
+      (pins MCU1-11)
+    )
+    (net "Net-(MCU1-Pad12)"
+      (pins MCU1-12)
+    )
+    (net "Net-(MCU1-Pad13)"
+      (pins MCU1-13)
+    )
+    (net "Net-(MCU1-Pad14)"
+      (pins MCU1-14)
+    )
+    (net "Net-(MCU1-Pad15)"
+      (pins MCU1-15)
+    )
+    (net "Net-(MCU1-Pad16)"
+      (pins MCU1-16)
+    )
+    (net "Net-(MCU1-Pad17)"
+      (pins MCU1-17)
+    )
+    (net "Net-(MCU1-Pad18)"
+      (pins MCU1-18)
+    )
+    (net "Net-(MCU1-Pad19)"
+      (pins MCU1-19)
+    )
+    (net GND
+      (pins MCU1-20)
+    )
+    (class kicad_default "" +5V GND "Net-(10k1-Pad1)" "Net-(MCU1-Pad10)" "Net-(MCU1-Pad11)"
+      "Net-(MCU1-Pad12)" "Net-(MCU1-Pad13)" "Net-(MCU1-Pad14)" "Net-(MCU1-Pad15)"
+      "Net-(MCU1-Pad16)" "Net-(MCU1-Pad17)" "Net-(MCU1-Pad18)" "Net-(MCU1-Pad19)"
+      "Net-(MCU1-Pad2)" "Net-(MCU1-Pad3)" "Net-(MCU1-Pad5)" "Net-(MCU1-Pad6)"
+      "Net-(MCU1-Pad7)" "Net-(MCU1-Pad8)" "Net-(MCU1-Pad9)"
+      (circuit
+        (use_via Via[0-1]_1000:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+    (wire (path B.Cu 250  105795 -74045  105410 -73660)(net +5V)(type protect))
+  )
+)
