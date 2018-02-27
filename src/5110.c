@@ -3,6 +3,7 @@
 void N5110_initialize() {
     lcd_sce = 0;
     lcd_rst = 1;
+    lcd_clk = 0;
     N5110_reset();
     N5110_led(1);
 
@@ -24,8 +25,15 @@ void N5110_initialize() {
 void N5110_reset() {
     __delay_ms(25);
     lcd_rst = 0;
+    N5110_clock();
     __delay_ms(50);
     lcd_rst = 1;
+    N5110_clock();
+}
+
+inline void N5110_clock() {
+    lcd_clk = 1;
+    lcd_clk = 0; 
 }
 
 inline void N5110_led(byte state) {
@@ -34,10 +42,21 @@ inline void N5110_led(byte state) {
 
 inline void N5110_set_mode(Lcd_Mode mode) {
     lcd_dc = mode;
+    N5110_clock();
 }
 
-inline void N5110_write_data(byte data) {
-    SSPBUF = data;
+void N5110_write_data(volatile byte data) {
+    for (byte i = 7; i > 0; i--) {
+        //lcd_din = (data >> i) & 1;
+        data <<= 1;
+        if (STATUSbits.C) {
+            lcd_din |= 1;
+        } else {
+            lcd_din &= 0;
+        }
+
+        N5110_clock();
+    }
 }
 
 void N5110_send(byte data, Lcd_Mode mode) {

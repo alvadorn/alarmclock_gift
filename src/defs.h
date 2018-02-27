@@ -3,6 +3,7 @@
 
 
 #include <xc.h>
+#include <pic18f14k50.h>
 
 
 // CONFIG1L
