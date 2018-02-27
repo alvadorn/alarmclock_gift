@@ -3,8 +3,6 @@
 
 #include "defs.h"
 
-extern void SPI_initialize();
-void SPI_125khz();
-void SPI_full_speed();
+extern void I2C_initialize();
 
 #endif

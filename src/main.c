@@ -1,6 +1,6 @@
 #include "defs.h"
 #include "settings.h"
-#include "spi.h"
+#include "i2c.h"
 #include "5110.h"
 
 static inline void config() {
@@ -10,7 +10,7 @@ static inline void config() {
 
     configInterruptions();
 
-    initializeSPI();
+    I2C_initialize();
 
     N5110_initialize();
 }
