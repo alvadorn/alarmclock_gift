@@ -1,6 +1,7 @@
 #include "defs.h"
 #include "settings.h"
 #include "spi.h"
+#include "5110.h"
 
 static inline void config() {
     configClock();
@@ -10,11 +11,13 @@ static inline void config() {
     configInterruptions();
 
     initializeSPI();
+
+    N5110_initialize();
 }
 
 
 static inline void loop() {
-
+    CLRWDT();
 }
 
 
