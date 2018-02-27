@@ -3,9 +3,33 @@
 
 
 #include <xc.h>
-#include <pic18f14k50.h>
+
+
+// CONFIG1L
+#pragma config CPUDIV=NOCLKDIV
+#pragma config USBDIV=OFF
+
+
+// CONFIG1H
+#pragma config FOSC=IRC
+
+// CONFIG2L
+#pragma config BOREN=NOSLP
+#pragma config BORV=30
+
+// CONFIG2H
+#pragma config WDTEN=ON
+#pragma config WDTPS=32768
+
+// CONFIG3H
+#pragma config HFOFST=OFF
+#pragma config MCLRE=ON
+
+
 
 #define _XTAL_FREQ 8000000 // 2 MHz
+
+typedef unsigned char byte;
 
 
 // pins
