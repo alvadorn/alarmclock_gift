@@ -30,6 +30,7 @@
 
 #define _XTAL_FREQ 8000000 // 2 MHz
 
+#define NULL 0
 typedef unsigned char byte;
 
 

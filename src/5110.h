@@ -4,8 +4,9 @@
 #include "defs.h"
 
 typedef enum LCD_MODE_t {
-    MODE_DATA = 0,
-    MODE_CMD
+    MODE_CMD = 0,
+    MODE_DATA
+
 } Lcd_Mode;
 
 

@@ -1,4 +1,5 @@
 #include "5110.h"
+#include "font.h"
 
 void N5110_initialize() {
     lcd_sce = 0;
@@ -11,10 +12,9 @@ void N5110_initialize() {
 
     N5110_set_mode(MODE_CMD);
     N5110_send(0x21, MODE_CMD); // advanced commands
-    N5110_send(0xA4, MODE_CMD); // contrast VOP
-    N5110_send(0xB2, MODE_CMD); // normal contrast
-    N5110_send(0x04, MODE_CMD); // temp coeff
-    N5110_send(0x14, MODE_CMD); // LCD bias
+    N5110_send(0xC0, MODE_CMD); // contrast VOP A4
+    N5110_send(0x06, MODE_CMD); // temp coeff
+    N5110_send(0x13, MODE_CMD); // LCD bias
     N5110_send(0x20, MODE_CMD); // simple commands
     N5110_send(0x0C, MODE_CMD); // Display mode normal
 
@@ -23,12 +23,10 @@ void N5110_initialize() {
 }
 
 void N5110_reset() {
-    __delay_ms(25);
+    __delay_ms(20);
     lcd_rst = 0;
-    N5110_clock();
-    __delay_ms(50);
+    __delay_ms(25);
     lcd_rst = 1;
-    N5110_clock();
 }
 
 inline void N5110_clock() {
@@ -42,19 +40,26 @@ inline void N5110_led(byte state) {
 
 inline void N5110_set_mode(Lcd_Mode mode) {
     lcd_dc = mode;
-    N5110_clock();
 }
 
-void N5110_write_data(volatile byte data) {
-    for (byte i = 7; i > 0; i--) {
-        //lcd_din = (data >> i) & 1;
-        data <<= 1;
-        if (STATUSbits.C) {
-            lcd_din |= 1;
-        } else {
-            lcd_din &= 0;
+void N5110_write_string(char *str) {
+    while (str != NULL) {
+        for (byte i = 0; i < 5; i++) {
+            N5110_send(font[*str - 0x20][i], MODE_DATA);
         }
+        str++;
+    }
+}
 
+void N5110_write_data(byte data) {
+    for (byte i = 0; i < 8; i++) {
+        //lcd_din &= ((data >> i) & 1);
+        if (data & 0x80) {
+            lcd_din = 1;
+        } else {
+            lcd_din = 0;
+        }
+        data <<= 1;
         N5110_clock();
     }
 }
@@ -71,10 +76,8 @@ void N5110_set_position(byte x, byte y) {
 }
 
 void N5110_fill(byte data) {
-    for (byte i = 0;  i < 6; i++) {
-        N5110_set_position(0, i);
-        for (byte j = 0; j < 84; j++) {
-            N5110_send(data, MODE_DATA);
-        }
+    N5110_set_position(0,0);
+    for (short i = 0; i < 504; i++) {
+        N5110_send(data, MODE_DATA);
     }
 }
