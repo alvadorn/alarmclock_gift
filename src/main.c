@@ -18,6 +18,8 @@ static inline void config() {
 
 static inline void loop() {
     CLRWDT();
+
+    SLEEP();
 }
 
 
@@ -28,6 +30,5 @@ int main() {
     while(1) {
         loop();
     }
-
     return 0;
 }

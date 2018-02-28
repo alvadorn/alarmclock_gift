@@ -12,10 +12,10 @@ inline void configVoltage() {
 
 inline void configPins() {
     // RA4 and RA5 as output
-    TRISA &= ~(3 << 4);
+    TRISA = 0b11001111;
 
     // RB4 and RB6 as output
-    TRISB &= 0xAF;
+    TRISB = 0b10101111;
 
     /**
      * RC0 -> BTN Down IN
