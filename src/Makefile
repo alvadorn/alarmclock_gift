@@ -1,6 +1,6 @@
 CC=xc8
 ARGS=--chip=18F14K50 --asmlist --outdir=../bin/ --mode=pro -P --opt=+space,+speed -N255 -M
-FILES=main.c settings.c i2c.c 5110.c
+FILES=main.c settings.c i2c.c 5110.c dht11.c
 
 all:
 	$(CC) $(FILES) $(ARGS)

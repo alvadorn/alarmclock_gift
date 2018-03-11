@@ -53,6 +53,7 @@ typedef unsigned char byte;
 // DHT pins
 #define dht_read PORTCbits.RC7
 #define dht_write LATCbits.LC7
+#define dht_mode TRISCbits.TRISC7
 
 // buzzer
 #define buzzer LATBbits.LB5

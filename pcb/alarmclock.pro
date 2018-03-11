@@ -1,4 +1,4 @@
-update=seg 26 fev 2018 15:36:30 -03
+update=qua 07 mar 2018 10:33:59 -03
 version=1
 last_client=kicad
 [cvpcb]
@@ -25,6 +25,16 @@ SolderMaskMinWidth=0
 DrawSegmentWidth=0.2
 BoardOutlineThickness=0.15
 ModuleOutlineThickness=0.15
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -65,13 +75,4 @@ LibName33=microchip_pic16mcu
 LibName34=microchip_pic18mcu
 LibName35=maxim
 LibName36=sensors
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
+LibName37=battery_management

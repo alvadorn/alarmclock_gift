@@ -42,12 +42,13 @@ inline void N5110_set_mode(Lcd_Mode mode) {
     lcd_dc = mode;
 }
 
-void N5110_write_string(char *str) {
-    while (str != NULL) {
+void N5110_write_string(const char *str) {
+    const char *s = str;
+    while (*s) {
         for (byte i = 0; i < 5; i++) {
-            N5110_send(font[*str - 0x20][i], MODE_DATA);
+            N5110_send(font[*s - 0x20][i], MODE_DATA);
         }
-        str++;
+        s++;
     }
 }
 
